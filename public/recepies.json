@@ -1,0 +1,33 @@
+[
+    {
+       "id": 1,
+       "name": "Leia Burger",
+       "ingredients": ["cheese", "meat"],
+       "instructions": "1. Preheat your grill.\n2. Cook the meat.\n3. Layer cheese on the meat.\n4. Grill until cheese is melted."
+    },
+    {
+       "id": 2,
+       "name": "Luke Burger",
+       "ingredients": ["tomato", "meat", "lettuce"],
+       "instructions": "1. Grill the meat.\n2. Slice the tomato.\n3. Layer lettuce, meat, and tomato.\n4. Serve immediately."
+    },
+    {
+       "id": 3,
+       "name": "Ham Solo Burger",
+       "ingredients": ["bacon", "cheese", "meat"],
+       "instructions": "1. Cook the bacon.\n2. Layer cheese and meat.\n3. Grill until cheese is melted.\n4. Add bacon on top."
+    },
+    {
+       "id": 4,
+       "name": "Double Ham Solo",
+       "ingredients": ["bacon", "cheese", "meat", "cheese", "meat"],
+       "instructions": "1. Cook the bacon.\n2. Layer cheese and meat.\n3. Grill until cheese is melted.\n4. Add bacon on top and repeat layers."
+    },
+    {
+       "id": 5,
+       "name": "All-green Yoda Burger",
+       "ingredients": ["cheese", "tomato", "cucumber", "lettuce"],
+       "instructions": "1. Layer lettuce, tomato, and cucumber.\n2. Top with cheese.\n3. Grill until cheese is melted.\n4. Serve immediately."
+    }
+   ]
+   
