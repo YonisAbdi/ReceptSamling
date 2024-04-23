@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import Recipes from "./components/recepies";
 import createDatabase from "./indexDB/db";
 import { useEffect } from "react";
+import Search from "./components/search";
+
 
 export default function Home() {
   useEffect(() =>{
@@ -17,11 +19,16 @@ export default function Home() {
     }
 
     doDBOperations();
+    
   }, []);
 
+  
   return (
     <main className={styles.main}>
+      <Search />
+
       <Recipes />
+      
     </main>
   );
 }
