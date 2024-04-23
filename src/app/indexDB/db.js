@@ -2,14 +2,14 @@
 import { openDB } from "idb";
 
 async function createDatabase(){
-    const db = await openDB('ReceptDatabase', 1, {
+    const db = await openDB('ReceptDatabase', 2, {
         upgrade(db){
-            if(!db.objectStoreNames.contains('books')) {
-                db.createObjectStore('books',{keyPath: 'id', autoIncrement: true});
+            if(!db.objectStoreNames.contains('recepies')) {
+                db.createObjectStore('recepies', {keyPath: 'id', autoIncrement: true});
             }
         },
     });
-
+    
     return db;
 }
 

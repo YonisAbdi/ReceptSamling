@@ -1,6 +1,7 @@
 'use client'
 // components/Recipes.js
 import { useEffect, useState } from 'react';
+import createDatabase from '../indexDB/db';
 
 
 function Recipes(){
