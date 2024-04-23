@@ -3,15 +3,11 @@ import React, { useEffect, useState } from 'react';
 import Recipes from "./components/recepies";
 import styles from "./page.module.css";
 import { getRecepies } from "./indexDB/db";
-
-import createDatabase from "./indexDB/db";
-import { useEffect } from "react";
 import Search from "./components/search";
-
-
 
 export default function Home() {
   const [recepies, setRecepies] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     async function initAndFetchRecepies() {
@@ -27,20 +23,23 @@ export default function Home() {
       }
     }
 
-
     initAndFetchRecepies();
-    doDBOperations();
-    
   }, []);
 
-  
+  // Example handler to update search query from Search component
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  // Filter recipes based on search query
+  const filteredRecepies = recepies.filter(recipe =>
+    recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main className={styles.main}>
-      <Recipes recepies={recepies} />
-      <Search />
-
-      <Recipes />
-      
+      <Search onSearch={handleSearch} />
+      <Recipes recepies={filteredRecepies} />
     </main>
   );
 }
