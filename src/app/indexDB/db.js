@@ -1,4 +1,3 @@
-'use client'
 import { openDB } from "idb";
 
 async function createDatabase(){
@@ -9,8 +8,17 @@ async function createDatabase(){
             }
         },
     });
-    
+  
     return db;
+}
+
+// Function to fetch recipes from IndexedDB
+export async function getRecepies() {
+    const db = await createDatabase();
+    const tx = db.transaction('recepies', 'readonly');
+    const store = tx.objectStore('recepies');
+    const allRecepies = await store.getAll();
+    return allRecepies;
 }
 
 export default createDatabase;
