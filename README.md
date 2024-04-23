@@ -5,7 +5,7 @@ Skapa en applikation där användare kan spara sina favoritrecept, inklusive ing
 Använd npm run dev, om det inte går pröva npm install för att installera alla dependecis
 
 ## Beskrivning
-IndexedDB kommer hålla recepten
+IndexedDB kommer hålla recepten efter den läser av JSON data, det ökar performence och gör att man kan läsa datan offline. (Johan)
 LocalStorage håller användarsettings, när man söker efter recept
 IndexedDB + LocalStorage, IndexedDB hanterar hålla recpten och LocalStorage håller användarsökningar
 
