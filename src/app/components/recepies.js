@@ -1,4 +1,11 @@
+
+'use client'
+// components/Recipes.js
+
+import createDatabase from '../indexDB/db';
+
 import React, { useEffect, useState } from 'react';
+
 
 function Recipes() {
     const [recepies, setRecepies] = useState([]);

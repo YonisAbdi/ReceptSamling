@@ -1,4 +1,24 @@
 'use client'
+
+import Image from "next/image";
+import styles from "./page.module.css";
+import Recipes from "./components/recepies.js";
+import createDatabase from "./indexDB/db";
+import recipesData from "../../public/recepies.json";
+import { useEffect } from "react";
+
+export default function Home() {
+  useEffect(() =>{
+    async function doDBOperations(){
+      const db = await createDatabase();
+
+      for (const recipe of recipesData) {
+        await db.add('recepies', recipe); // Assuming 'recepies' is the object store name
+      }
+
+      const books = await db.getAll('recepies');
+      
+      console.log(books);
 import React, { useEffect, useState } from 'react';
 import Recipes from "./components/recepies";
 import styles from "./page.module.css";
@@ -21,6 +41,7 @@ export default function Home() {
         localStorage.setItem('recepies', JSON.stringify(fetchedRecepies)); // Store the fetched data in localStorage
         setRecepies(fetchedRecepies);
       }
+
     }
 
     initAndFetchRecepies();
