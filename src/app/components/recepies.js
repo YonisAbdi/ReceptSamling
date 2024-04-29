@@ -14,7 +14,7 @@ function Recipes() {
 
     useEffect(() => {
         const localData = localStorage.getItem('recepies');
-        if (localData) {
+        if (localData > 0) {
             setRecepies(JSON.parse(localData));
         } else {
             fetch('./recepies.json')
